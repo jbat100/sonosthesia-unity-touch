@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Sonosthesia.Touch
 {
-    public class Touch : MonoBehaviour
+    public class TouchDriver : MonoBehaviour
     {
         [SerializeField] private TouchChannel _channel;
 

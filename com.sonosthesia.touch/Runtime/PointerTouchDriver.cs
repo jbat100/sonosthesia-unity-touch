@@ -6,23 +6,23 @@ using UnityEngine.EventSystems;
 namespace Sonosthesia.Touch
 {
     // note : for use with the new input system the main camera needs to have a PhysicsRaycaster
-    public class PointerTouch : Touch, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
+    public class PointerTouchDriver : TouchDriver, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
     {
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log($"{this} {nameof(OnPointerDown)}");
+            //Debug.Log($"{this} {nameof(OnPointerDown)}");
             Begin(MakePayload(eventData));
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log($"{this} {nameof(OnPointerUp)}");
+            //Debug.Log($"{this} {nameof(OnPointerUp)}");
             Clean();
         }
 
         public void OnPointerMove(PointerEventData eventData)
         {
-            Debug.Log($"{this} {nameof(OnPointerMove)}");
+            //Debug.Log($"{this} {nameof(OnPointerMove)}");
             if (ShouldMove(eventData))
             {
                 Move(MakePayload(eventData));

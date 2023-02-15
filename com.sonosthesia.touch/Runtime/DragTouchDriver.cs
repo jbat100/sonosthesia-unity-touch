@@ -6,17 +6,17 @@ using UnityEngine.EventSystems;
 namespace Sonosthesia.Touch
 {
     // note : for use with the new input system the main camera needs to have a PhysicsRaycaster
-    public class DragTouch : Touch, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class DragTouchDriver : TouchDriver, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         public void OnBeginDrag(PointerEventData eventData)
         {
-            Debug.Log($"{this} {nameof(OnBeginDrag)}");
+            //Debug.Log($"{this} {nameof(OnBeginDrag)}");
             Begin(MakePayload(eventData));
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            Debug.Log($"{this} {nameof(OnDrag)}");
+            //Debug.Log($"{this} {nameof(OnDrag)}");
             if (ShouldMove(eventData))
             {
                 Move(MakePayload(eventData));
@@ -25,7 +25,7 @@ namespace Sonosthesia.Touch
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            Debug.Log($"{this} {nameof(OnEndDrag)}");
+            //Debug.Log($"{this} {nameof(OnEndDrag)}");
             Clean();
         }
     }
